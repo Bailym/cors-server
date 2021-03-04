@@ -6,7 +6,7 @@ const host = process.env.HOST || '0.0.0.0';
 const port = process.env.PORT || 8080;
 
 corsProxy.createServer({
-    originWhitelist: ['http://localhost:3000', 'http://18.135.34.204/'],
+    originWhitelist: ['http://localhost:3000', 'http://18.135.34.204:80, http://18.135.34.204:443, http://18.135.34.204/'],
     requireHeader: ['origin', 'x-requested-with'],
     removeHeaders: ['cookie', 'cookie2']
 }).listen(port, host, () => {
